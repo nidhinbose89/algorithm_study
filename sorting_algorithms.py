@@ -33,7 +33,7 @@ def bubble_sort(unsorted_array):
     This is in ascending order. It is inplace and stable.
     """
     print "In bubble sort - ascending..."
-    for k in range(1, len(unsorted_array) - 1):
+    for k in range(1, len(unsorted_array)):
         flag = 0
         for i in range(len(unsorted_array) - k - 1):
             if unsorted_array[i] > unsorted_array[i + 1]:
