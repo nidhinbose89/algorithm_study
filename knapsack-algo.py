@@ -15,7 +15,6 @@ def fractional_knapsack(knap_weight, data_items):
 
     for name, wt_val in data_items.items():
         ratio_map[name] = wt_val[1] / float(wt_val[0])
-    import ipdb; ipdb.set_trace()
     # sort value/weight ratio in descending
     # we take value/weight since the goal is to get max value per weight
     sorted_value_weight = sorted(ratio_map.iteritems(), key=lambda (k, v): (v, k), reverse=True)

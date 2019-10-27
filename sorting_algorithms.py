@@ -33,18 +33,22 @@ def bubble_sort(unsorted_array):
     This is in ascending order. It is inplace and stable.
     """
     print "In bubble sort - ascending..."
+    swaps = 0
     for k in range(len(unsorted_array)):
         flag = 0
         for i in range(len(unsorted_array) - k - 1):
             if unsorted_array[i] > unsorted_array[i + 1]:
-                unsorted_array[i], unsorted_array[
-                    i + 1] = unsorted_array[i + 1], unsorted_array[i]
+                unsorted_array[i], unsorted_array[i + 1] = unsorted_array[i + 1], unsorted_array[i]
                 flag = 1
+                swaps += 1
             # if the list is already sorted, there wont be any swaps
             # then it is safe to assume that the list is already sorted.
         if not flag:
             break
-    return unsorted_array
+
+    print "Array is sorted in {} swaps.".format(swaps)
+    print "First Element: {}".format(unsorted_array[0])
+    print "Last Element: {}".format(unsorted_array[-1])
 
 
 def insertion_sort(unsorted_array):
