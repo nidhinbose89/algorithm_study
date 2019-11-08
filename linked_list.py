@@ -7,10 +7,10 @@
 class Node(object):
     """Node Implementation."""
 
-    def __init__(self, data, next_node=None):
+    def __init__(self, data):
         """Initialize."""
         self.data = data
-        self.next = next_node
+        self.next = None
 
     def __repr__(self):
         """Representation."""
@@ -70,6 +70,20 @@ class LinkedList(object):
             current = current.next
         return found
 
+    def reverse(self):
+        """Reverse a linked list."""
+        prev = None
+        curr = self.head
+        nxt = None
+
+        while curr:
+            nxt = curr.next
+            curr.next = prev
+            prev = curr
+            curr = nxt
+
+        self.head = prev
+
     def print_linked_list(self):
         """Print linked list."""
         current = self.head
@@ -85,10 +99,9 @@ ll_5.append(4)
 ll_5.append(7)
 ll_5.append(1)
 ll_5.prepend(10)
-ll_5.delete_with_value(1)
-ll_5.delete_with_value(4)
 ll_5.delete_with_value(7)
 
 ll_5.print_linked_list()
-
 print ll_5.find_with_value(44)
+ll_5.reverse()
+ll_5.print_linked_list()
