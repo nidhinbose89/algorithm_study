@@ -107,20 +107,20 @@ def quick_sort(unsorted_array):
     """
     def _quick_sort(array, start, end):
 
-        def _partition_and_order(array, start, end):
-            # push all the elements lesser than pivot to
-            # the left of `partition_index`
-            pivot = array[end]  # better logic for picking pivot??
-            partition_index = start
-            for idx in range(start, end):
-                if array[idx] < pivot:
-                    array[idx], array[partition_index] = array[
-                        partition_index], array[idx]
-                    partition_index += 1
-            # swap the partition_index element with pivot
-            array[end], array[partition_index] = array[
-                partition_index], array[end]
-            return partition_index
+        def _partition_and_order(arr, low, high):
+            i = low         # index of smaller element
+            pivot = arr[high]     # pivot
+
+            for j in range(low, high):
+                # If current element is smaller than the pivot
+                if arr[j] < pivot:
+
+                    # increment index of smaller element
+                    arr[i], arr[j] = arr[j], arr[i]
+                    i = i + 1
+
+            arr[i], arr[high] = arr[high], arr[i]
+            return i
         if start < end:
             partition_index = _partition_and_order(unsorted_array, start, end)
             # The element at the partition_index is sorted
