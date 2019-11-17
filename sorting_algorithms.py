@@ -57,7 +57,7 @@ def insertion_sort(unsorted_array):
     This is in ascending order. It is inplace and stable.
     """
     print "In insertion sort - ascending..."
-    for k in range(1, len(unsorted_array) - 1):
+    for k in range(1, len(unsorted_array)):
         value = unsorted_array[k]
         hole = k
         while hole > 0 and unsorted_array[hole - 1] > value:
