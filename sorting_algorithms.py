@@ -16,9 +16,9 @@ def selection_sort(unsorted_array):
     It is inplace and stable.
     """
     print "In selection sort - ascending..."
-    for i in range(len(unsorted_array) - 2):
+    for i in range(len(unsorted_array)):
         imin = i
-        for j in range(i + 1, len(unsorted_array) - 1):
+        for j in range(i + 1, len(unsorted_array)):
             if unsorted_array[j] < unsorted_array[imin]:
                 imin = j
         unsorted_array[i], unsorted_array[
